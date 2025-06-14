@@ -1,0 +1,8 @@
+# ignore these extensions
+*.exe
+*.ilk
+*.obj
+*.pdb
+
+# ignore these dir 
+**/bin

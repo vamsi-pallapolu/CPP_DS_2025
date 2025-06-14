@@ -1,0 +1,9 @@
+## Structures
+
+A structer is a collection of related data items
+
+## Pointers
+
+- Pointers are address variables
+- Pointer are used to access heap memory
+- Pointers are used to access the resources which are outside the programs
