@@ -6,3 +6,6 @@
 
 # ignore these dir 
 **/bin
+
+# ignore word documents
+*.docx
