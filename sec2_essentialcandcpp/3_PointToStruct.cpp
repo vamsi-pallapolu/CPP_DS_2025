@@ -15,9 +15,17 @@ int main()
 
     std::cout << r << std::endl;
 
-    Rectangle r2[] = {{10, 20}};
+    free(r);
+
+    Rectangle r2[] = {{10, 20}};  // in cpp struct is not required
     for (const Rectangle &r : r2) // to avoid copying and modification
         std::cout << r.length << std::endl;
+
+
+    Rectangle r3 = {10, 20};
+    Rectangle *p = &r3;
+    std::cout << p->length << std::endl;
+    std::cout << p->breadth << std::endl;
 
     return 0;
 }
