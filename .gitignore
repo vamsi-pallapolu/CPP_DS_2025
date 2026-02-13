@@ -9,3 +9,6 @@
 
 # ignore word documents
 *.docx
+
+# ignore tmp files
+*.tmp
