@@ -29,6 +29,7 @@ void fibonacci(int n)
     {
         std::cout << "Enter input > 0" << std::endl;
     }
+    std::cout << std::endl;
 }
 
 int main()
