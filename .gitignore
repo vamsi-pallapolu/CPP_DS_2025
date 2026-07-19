@@ -13,3 +13,7 @@ bin/
 
 # ignore tmp files
 *.tmp
+
+# ignore .dSYM
+
+*.dSYM/
