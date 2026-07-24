@@ -1,19 +1,7 @@
-# ignore these extensions
-*.exe
-*.ilk
-*.obj
-*.pdb
-
-# ignore these dir 
-**/bin
-bin/
-
-# ignore word documents
-*.docx
-
-# ignore tmp files
-*.tmp
-
-# ignore .dSYM
-
+derived/
 *.dSYM/
+*.o
+*.out
+.DS_Store
+
+
