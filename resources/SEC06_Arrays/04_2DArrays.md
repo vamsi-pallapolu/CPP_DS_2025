@@ -17,6 +17,28 @@ int A[2][3] = {{1, 2, 3}, {4, 5, 6}};
 - **Fast**: single allocation, cache-friendly, indices resolve to pointer arithmetic.
 - **Fixed shape**: dimensions must be compile-time constants.
 
+### Deriving dimensions with `sizeof`
+
+Because the whole array lives in one contiguous block with its type intact, `sizeof` yields real byte counts you can divide:
+
+```cpp
+int rows = sizeof(A) / sizeof(A[0]);        // total bytes / bytes-per-row → 2
+int cols = sizeof(A[0]) / sizeof(A[0][0]);  // bytes-per-row / bytes-per-int → 3
+
+for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < cols; j++) {
+        printf("%d ", A[i][j]);
+    }
+    std::cout << std::endl;
+}
+```
+
+Concretely (for `int` = 4 bytes): `sizeof(A) = 24`, `sizeof(A[0]) = 12`, `sizeof(A[0][0]) = 4`.
+
+**This trick works only for the contiguous form.** For `B` (`int *B[2]`), `sizeof(B[0])` is the size of a *pointer* (8 bytes), not a row — so columns are unrecoverable. For `C` (`int **C`), `sizeof(C)` is just 8 bytes total. Heap-backed 2D arrays force you to track dimensions in separate variables.
+
+Similarly, once a 2D array **decays to a pointer** (e.g. passed into a function taking `int (*p)[3]` or `int **p`), `sizeof` no longer reports the full array — you're back to tracking rows/cols manually.
+
 ## 2. Array of row pointers (semi-dynamic)
 
 ```cpp

@@ -16,10 +16,9 @@ int main(){
     // free the alloted memory in heap
     free(p);
     p=q;
-    // Assign NULL to p as it is not pointing to any memory
-    p=NULL;
+    q=NULL; // qno longer owns the memory p does
     for(int i=0;i<10;i++)
-        printf("%d", q[i]);
+        printf("%d", p[i]);
         
     return 0;
 }
