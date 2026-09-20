@@ -6,3 +6,11 @@ derived/
 
 web*.md
 
+# Windows intermediate files
+# exe, ilk, obj, pdb
+*.obj
+*.exe
+*.ilk
+*.pdb
+
+

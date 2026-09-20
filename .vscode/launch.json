@@ -29,6 +29,33 @@
             "logging": {
                 "engineLogging": false
             }
+        },
+        {
+            "name": "C/C++: MSVC debug active file (Windows)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/derived/${relativeFileDirname}/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "console": "integratedTerminal",
+            "preLaunchTask": "C/C++: MSVC build active file (Windows)"
+        },
+        {
+            "name": "C/C++: MSVC run active file (Windows)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/derived/${relativeFileDirname}/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "console": "integratedTerminal",
+            "preLaunchTask": "C/C++: MSVC build active file (Windows)",
+            "logging": {
+                "engineLogging": false
+            }
         }
     ]
 }
